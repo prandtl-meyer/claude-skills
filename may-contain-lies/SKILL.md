@@ -153,6 +153,65 @@ if the evidence is overwhelming in that direction.
 
 ---
 
+## Step 5: Visual Summary
+
+After completing the written assessment, produce a visual summary using the
+`visualize:read_me` + `visualize:show_widget` tool pair. This is **mandatory** —
+it turns the written analysis into an at-a-glance scorecard.
+
+### What to render
+
+Call `visualize:read_me` (modules: `["chart"]`) first, then call `show_widget`
+with an HTML widget that contains **all three panels** below in a single card:
+
+#### Panel A — Ladder Scorecard (left/top)
+A vertical ladder with four rungs. For each rung assign one of three ratings:
+
+| Rating | Meaning | Colour |
+|--------|---------|--------|
+| ✅ Pass | Claim survives this rung | Green (`#22c55e`) |
+| ⚠️ Weak | Partial or uncertain | Amber (`#f59e0b`) |
+| ❌ Fail | Claim breaks down here | Red (`#ef4444`) |
+
+Draw the ladder as stacked horizontal bars or pill badges. Label each rung
+with its short name (Accuracy / Representativeness / Causation / Universality).
+Next to each label add the rating icon and a ≤ 8-word reason pulled from
+the written analysis.
+
+#### Panel B — Bias Flags (right/top)
+Two indicator chips:
+- **Confirmation Bias** — colour-coded green (low concern) / amber (possible) /
+  red (strong concern) based on the analysis.
+- **Black-and-White Thinking** — same three-colour scale.
+
+Each chip shows the bias name and a one-line note.
+
+#### Panel C — Confidence Meter (bottom, full-width)
+A horizontal progress bar from 0 % ("Unsupported") to 100 % ("Well-founded").
+Place the needle based on the written Assessment:
+- Unsupported → 0–20 %
+- Weak / speculative → 20–40 %
+- Mixed / uncertain → 40–60 %
+- Reasonably supported → 60–80 %
+- Well-founded → 80–100 %
+
+Label the bar with the percentage and a ≤ 6-word verdict string (e.g.
+"Plausible hypothesis, causation unproven").
+
+### Styling constraints
+- Use CSS variables for colours where possible so the widget respects the
+  user's theme.
+- Keep the overall card width ≤ 700 px; no horizontal scroll.
+- Background: transparent or `var(--background)`.
+- Font: inherit (system sans-serif).
+- No external dependencies — pure HTML/CSS/JS only.
+
+### Loading messages
+Use neutral, descriptive loading messages (this is an analytical/potentially
+sensitive context): e.g. `["Building scorecard", "Rendering ladder"]`.
+
+---
+
 ## Notes on Tone and Scope
 
 - Be precise about *which* rung is at issue, rather than vague about "more research
