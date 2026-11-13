@@ -28,6 +28,22 @@ Given any claim, study, article, or argument, Claude will:
 
 ---
 
+### 🧭 [decision-log](./decision-log/)
+
+A two-phase decision journaling facilitator based on Ryder Carroll's Bullet Journal Decision Log framework, designed to separate decision quality from outcome luck ("resulting").
+
+When making or reviewing significant choices, Claude will:
+- Filter decisions by reversibility (**Hat, Haircut, or Tattoo**) so you only log choices that warrant structured reflection
+- Guide you through **Phase 1 (Pre-Result)** before you act — challenging binary options, documenting rationale, evidence, opportunity costs, and a future-self regret check
+- Walk you through **Phase 2 (Post-Result)** once outcomes are clear — auditing initial assumptions, running the counterfactual test, and critiquing your process rather than hindsight luck
+- Generate a clean, two-page **Markdown Decision Log** ready for your notebook or knowledge base
+
+**Trigger phrases:** "log a decision", "help me make a haircut decision", "start a decision log", "review a past decision"
+
+📥 [Download decision-log.skill](./decision-log/decision-log.skill)
+
+---
+
 ## Contributing
 
 If you build on these skills or have suggestions, feel free to open an issue or PR.
